@@ -3,6 +3,7 @@ from PIL import Image
 import torch
 import os
 from test import test_runner
+import sys
 
 k = 10
 
@@ -14,7 +15,9 @@ if not os.path.exists("model.pth"):
 model = torch.load("model.pth")
 model.eval()
 
-img = (np.array(Image.open("src/cat.png")) / 128) - 1  # in the range -1, 1
+image_path = sys.argv[1] if len(sys.argv) > 1 else "src/cat.png"
+
+img = (np.array(Image.open(image_path)) / 128) - 1  # in the range -1, 1
 inp = torch.from_numpy(img).permute(2, 0, 1).unsqueeze(0).to(torch.float32)
 logits = model(inp)
 probs = torch.nn.functional.softmax(logits, dim=-1)
