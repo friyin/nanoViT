@@ -1,0 +1,15 @@
+certifi==2024.8.30
+charset-normalizer==3.4.0
+idna==3.10
+numpy==1.26.4
+nvidia-cublas-cu11==11.10.3.66
+nvidia-cuda-nvrtc-cu11==11.7.99
+nvidia-cuda-runtime-cu11==11.7.99
+nvidia-cudnn-cu11==8.5.0.96
+pillow==11.0.0
+requests==2.32.3
+timm==0.5.4
+torch==1.13.1
+torchvision==0.14.1
+typing_extensions==4.12.2
+urllib3==2.2.3
